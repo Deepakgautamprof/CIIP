@@ -1,0 +1,1733 @@
+/* =========================================================
+   CIIP OFFICER DASHBOARD
+   PROFESSIONAL GOVERNMENT ADMIN UI
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.officer-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #172033;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.officer-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 258px;
+  height: 100vh;
+
+  background: #ffffff;
+  border-right: 1px solid #e3e8ef;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+
+  box-shadow:
+    4px 0 20px rgba(20, 35, 60, 0.025);
+}
+
+.officer-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.officer-sidebar::-webkit-scrollbar-thumb {
+  background: #d8dee8;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+   ========================================================= */
+
+.sidebar-brand {
+  min-height: 82px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.sidebar-logo {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  background: #edf4ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  border: 1px solid #dce8fb;
+}
+
+.sidebar-brand h2 {
+  margin: 0;
+
+  color: #183b73;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.sidebar-brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8993a3;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION
+   ========================================================= */
+
+.sidebar-section-title {
+  padding: 22px 21px 9px;
+
+  color: #a0a8b5;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+   ========================================================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 0 10px;
+}
+
+.sidebar-item {
+  width: 100%;
+  min-height: 44px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #596579;
+
+  border-radius: 9px;
+
+  padding: 10px 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.sidebar-item:hover {
+  background: #f4f7fb;
+  color: #2758a8;
+
+  transform: translateX(1px);
+}
+
+.sidebar-item.active {
+  background: #edf4ff;
+  color: #2457a7;
+
+  box-shadow:
+    inset 3px 0 0 #2d62b3;
+}
+
+.sidebar-icon {
+  width: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-count {
+  margin-left: auto;
+
+  min-width: 23px;
+  height: 22px;
+
+  padding: 0 6px;
+
+  border-radius: 11px;
+
+  background: #e4edff;
+  color: #2a5ba9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.coming-soon {
+  margin-left: auto;
+
+  background: #f1f3f6;
+  color: #8c95a2;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   LOGOUT SIDEBAR
+   ========================================================= */
+
+.logout-sidebar {
+  color: #c53030;
+}
+
+.logout-sidebar:hover {
+  background: #fff2f2;
+  color: #bd2f2f;
+}
+
+.logout-sidebar .sidebar-icon {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+
+  padding: 15px 12px 17px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.sidebar-user-card {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  background: #f7f9fc;
+
+  border: 1px solid #edf1f5;
+
+  border-radius: 10px;
+}
+
+.sidebar-user-avatar {
+  width: 37px;
+  height: 37px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eaf1ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+.sidebar-user-card strong {
+  display: block;
+
+  color: #263247;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  max-width: 150px;
+}
+
+.sidebar-user-card span {
+  display: block;
+
+  color: #8992a0;
+
+  font-size: 9px;
+
+  margin-top: 3px;
+}
+
+.sidebar-security {
+  margin-top: 10px;
+
+  text-align: center;
+
+  color: #a0a8b4;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.officer-main {
+  margin-left: 258px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.officer-navbar {
+  height: 72px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e9f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 34px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+
+  box-shadow:
+    0 2px 10px rgba(25, 42, 70, 0.025);
+}
+
+.navbar-page-title span {
+  display: block;
+
+  color: #8a93a1;
+
+  font-size: 10px;
+
+  margin-bottom: 3px;
+}
+
+.navbar-page-title strong {
+  color: #263247;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.officer-nav-right {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.officer-notification {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 9px;
+
+  background: #f5f7fa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+}
+
+.officer-notification:hover {
+  background: #edf3fc;
+}
+
+.notification-dot {
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #d64545;
+
+  border: 1px solid #ffffff;
+}
+
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.officer-user {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.officer-avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #edf4ff;
+
+  border: 1px solid #dce8fb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.officer-user strong {
+  display: block;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #1d2638;
+}
+
+.officer-user span {
+  display: block;
+
+  font-size: 9px;
+
+  color: #7b8495;
+
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+   ========================================================= */
+
+.logout-btn {
+  border: 1px solid #f3dede;
+
+  background: #fff5f5;
+
+  color: #bd3333;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+}
+
+.logout-btn:hover {
+  background: #ffe9e9;
+  border-color: #f0caca;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  border: none;
+
+  background: #edf4ff;
+
+  color: #2758a8;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.officer-container {
+  width: 100%;
+  max-width: 1480px;
+
+  margin: 0 auto;
+
+  padding: 30px 34px 55px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.officer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+
+  border-radius: 15px;
+
+  padding: 26px 28px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 5px 20px rgba(31, 52, 82, 0.035);
+}
+
+.welcome-text {
+  margin: 0 0 6px;
+
+  color: #3567b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.9px;
+}
+
+.officer-header h1 {
+  margin: 0;
+
+  font-size: 26px;
+  line-height: 1.25;
+
+  color: #172033;
+
+  font-weight: 750;
+}
+
+.officer-header p:last-child {
+  margin: 8px 0 0;
+
+  color: #6f7889;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.officer-badge {
+  flex-shrink: 0;
+
+  background: #eef4ff;
+
+  color: #2758a8;
+
+  border: 1px solid #d9e6ff;
+
+  border-radius: 9px;
+
+  padding: 11px 16px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   STATISTICS HEADER
+   ========================================================= */
+
+.statistics-section {
+  margin-bottom: 25px;
+}
+
+.statistics-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+}
+
+.statistics-heading h2 {
+  margin: 0;
+
+  color: #202b3e;
+
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.statistics-heading p {
+  margin: 4px 0 0;
+
+  color: #7b8494;
+
+  font-size: 11px;
+}
+
+.live-status {
+  color: #31824b;
+
+  background: #edf8f0;
+
+  border: 1px solid #d9f0df;
+
+  padding: 7px 11px;
+
+  border-radius: 7px;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+   ========================================================= */
+
+.officer-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.stat-card {
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+
+  border-radius: 13px;
+
+  padding: 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 105px;
+
+  box-shadow:
+    0 3px 15px rgba(31, 52, 82, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 28px rgba(31, 52, 82, 0.07);
+}
+
+.stat-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+}
+
+.stat-card span {
+  display: block;
+
+  color: #7a8393;
+
+  font-size: 10px;
+
+  margin-bottom: 4px;
+}
+
+.stat-card strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 23px;
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.stat-card small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9aa2ae;
+
+  font-size: 8px;
+}
+
+
+/* STAT ICONS */
+
+.stat-card.total .stat-icon {
+  background: #eef4ff;
+}
+
+.stat-card.assigned .stat-icon {
+  background: #fff7e8;
+}
+
+.stat-card.progress .stat-icon {
+  background: #eaf6ff;
+}
+
+.stat-card.resolved .stat-icon {
+  background: #edf8f0;
+}
+
+.stat-card.verification .stat-icon {
+  background: #fff8e7;
+}
+
+.stat-card.verified .stat-icon {
+  background: #e9f8f2;
+}
+
+.stat-card.closed .stat-icon {
+  background: #edf0f3;
+}
+
+.stat-card.priority .stat-icon {
+  background: #fff0e8;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.officer-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+.action-btn {
+  border: 1px solid #dbe2ec;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+}
+
+.action-btn:hover {
+  border-color: #9fb9e8;
+
+  background: #f7faff;
+
+  transform: translateY(-1px);
+}
+
+.action-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.action-btn.refresh {
+  background: #2758a8;
+
+  border-color: #2758a8;
+
+  color: #ffffff;
+}
+
+.action-btn.refresh:hover {
+  background: #1f4c96;
+
+  border-color: #1f4c96;
+}
+
+
+/* =========================================================
+   COMPLAINT SECTION
+   ========================================================= */
+
+.complaints-section {
+  margin-top: 5px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #172033;
+
+  font-weight: 750;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+
+  color: #7a8393;
+
+  font-size: 11px;
+}
+
+.complaint-count {
+  background: #ffffff;
+
+  border: 1px solid #dfe5ed;
+
+  color: #526071;
+
+  border-radius: 20px;
+
+  padding: 7px 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   COMPLAINT GRID
+   ========================================================= */
+
+.complaints-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.officer-complaint-card {
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+
+  border-radius: 14px;
+
+  padding: 19px;
+
+  box-shadow:
+    0 4px 18px rgba(31, 52, 82, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.officer-complaint-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 32px rgba(31, 52, 82, 0.08);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.complaint-card-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+.complaint-id {
+  color: #7d8797;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+.complaint-card-top h3 {
+  margin: 5px 0 0;
+
+  font-size: 16px;
+
+  color: #202b3e;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PRIORITY
+   ========================================================= */
+
+.priority-badge {
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+.priority-badge.low {
+  background: #edf8f0;
+  color: #2f7d45;
+}
+
+.priority-badge.medium {
+  background: #fff8e7;
+  color: #9a6a00;
+}
+
+.priority-badge.high {
+  background: #fff0e8;
+  color: #b85019;
+}
+
+.priority-badge.critical {
+  background: #ffe9e9;
+  color: #bd2929;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.complaint-description {
+  color: #626d7d;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+
+  margin: 14px 0;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.complaint-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+.complaint-details div {
+  min-width: 0;
+}
+
+.complaint-details span {
+  display: block;
+
+  color: #8a93a1;
+
+  font-size: 8px;
+
+  margin-bottom: 4px;
+
+  font-weight: 600;
+}
+
+.complaint-details strong {
+  display: block;
+
+  color: #354052;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+
+  font-weight: 650;
+
+  overflow-wrap: anywhere;
+}
+
+.department-value {
+  color: #315c9e !important;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.complaint-status-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 17px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.status-label {
+  color: #7a8393;
+
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.status-badge {
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+.status-badge.submitted {
+  background: #eef4ff;
+  color: #3567b8;
+}
+
+.status-badge.under_review {
+  background: #f2efff;
+  color: #6752ad;
+}
+
+.status-badge.approved {
+  background: #edf8f0;
+  color: #337847;
+}
+
+.status-badge.assigned {
+  background: #fff6e7;
+  color: #9b6905;
+}
+
+.status-badge.in_progress {
+  background: #eaf6ff;
+  color: #1470a8;
+}
+
+.status-badge.resolved {
+  background: #edf8f0;
+  color: #2f7d45;
+}
+
+.status-badge.verified {
+  background: #e9f8f2;
+  color: #20765a;
+}
+
+.status-badge.closed {
+  background: #edf0f3;
+  color: #596273;
+}
+
+.status-badge.reopened {
+  background: #fff0f0;
+  color: #bd3333;
+}
+
+
+/* =========================================================
+   COMPLAINT ACTIONS
+   ========================================================= */
+
+.complaint-actions {
+  margin-top: 13px;
+}
+
+.status-action-btn {
+  width: 100%;
+
+  border: none;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.status-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.status-action-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.start-work {
+  background: #2758a8;
+}
+
+.start-work:hover:not(:disabled) {
+  background: #1e478c;
+}
+
+.mark-resolved {
+  background: #2f7d45;
+}
+
+.mark-resolved:hover:not(:disabled) {
+  background: #256438;
+}
+
+
+/* =========================================================
+   STATUS INFO
+   ========================================================= */
+
+.status-info {
+  width: 100%;
+
+  padding: 10px 11px;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 650;
+
+  line-height: 1.5;
+}
+
+.status-info.waiting {
+  background: #edf8f0;
+  color: #2f7d45;
+}
+
+.verified-info {
+  background: #e9f8f2;
+  color: #20765a;
+}
+
+.closed-info {
+  background: #edf0f3;
+  color: #596273;
+}
+
+.reopened-info {
+  background: #fff0f0;
+  color: #bd3333;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.empty-state {
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+
+  border-radius: 14px;
+
+  padding: 58px 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 18px rgba(31, 52, 82, 0.03);
+}
+
+.loading-icon {
+  font-size: 34px;
+
+  margin-bottom: 11px;
+}
+
+.empty-state h3 {
+  margin: 0;
+
+  color: #273246;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.empty-state p {
+  color: #7b8494;
+
+  font-size: 11px;
+
+  margin-top: 7px;
+}
+
+.error-state {
+  border-color: #f0d7d7;
+}
+
+.error-state button {
+  margin-top: 12px;
+
+  padding: 8px 15px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2758a8;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.officer-footer {
+  margin-top: auto;
+
+  border-top: 1px solid #e2e7ee;
+
+  background: #ffffff;
+
+  padding: 20px 34px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.officer-footer p {
+  margin: 0;
+
+  color: #687386;
+
+  font-size: 9px;
+}
+
+.officer-footer span {
+  color: #8b94a2;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+button:focus-visible {
+  outline: 2px solid #6f9cda;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1250px
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .officer-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1000px
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .officer-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .complaints-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .officer-sidebar {
+    transform: translateX(-100%);
+
+    transition:
+      transform 0.25s ease;
+
+    box-shadow:
+      12px 0 35px rgba(15, 25, 40, 0.12);
+  }
+
+  .officer-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .officer-main {
+    margin-left: 0;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .officer-navbar {
+    padding: 0 20px;
+  }
+
+  .navbar-page-title {
+    margin-right: auto;
+
+    margin-left: 12px;
+  }
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+      rgba(15, 25, 40, 0.38);
+
+    backdrop-filter: blur(1px);
+
+    z-index: 950;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .officer-container {
+    padding: 21px 16px 40px;
+  }
+
+  .officer-header {
+    padding: 21px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  .officer-header h1 {
+    font-size: 22px;
+  }
+
+  .officer-header p:last-child {
+    font-size: 11px;
+  }
+
+  .officer-badge {
+    align-self: flex-start;
+  }
+
+  .officer-nav-right {
+    gap: 7px;
+  }
+
+  .officer-notification {
+    display: none;
+  }
+
+  .officer-user {
+    display: none;
+  }
+
+  .logout-btn {
+    padding: 8px 12px;
+  }
+
+  .officer-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px;
+
+    min-height: 96px;
+  }
+
+  .stat-icon {
+    width: 37px;
+    height: 37px;
+
+    font-size: 17px;
+  }
+
+  .stat-card strong {
+    font-size: 20px;
+  }
+
+  .stat-card span {
+    font-size: 9px;
+  }
+
+  .stat-card small {
+    font-size: 8px;
+  }
+
+  .statistics-heading {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .officer-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+
+  .complaint-details {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .officer-footer {
+    padding: 18px;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 500px
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .officer-navbar {
+    height: 65px;
+
+    padding: 0 14px;
+  }
+
+  .navbar-page-title span {
+    font-size: 8px;
+  }
+
+  .navbar-page-title strong {
+    font-size: 14px;
+  }
+
+  .officer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-header {
+    border-radius: 12px;
+  }
+
+  .officer-complaint-card {
+    padding: 16px;
+  }
+
+  .complaint-card-top {
+    gap: 8px;
+  }
+
+  .complaint-card-top h3 {
+    font-size: 15px;
+  }
+
+  .complaint-description {
+    font-size: 10px;
+  }
+
+  .complaint-status-row {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 380px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .officer-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .officer-navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-page-title {
+    margin-left: 8px;
+  }
+
+  .navbar-page-title strong {
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    padding: 7px 9px;
+
+    font-size: 10px;
+  }
+
+  .officer-header {
+    padding: 17px;
+  }
+
+  .officer-header h1 {
+    font-size: 20px;
+  }
+
+  .officer-complaint-card {
+    padding: 14px;
+  }
+
+}

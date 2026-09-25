@@ -1,0 +1,1080 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.dap-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  color: #172033;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dap-header {
+  width: 100%;
+  min-height: 82px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5eaf1;
+
+  padding: 16px 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.dap-header-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.dap-back-btn {
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #dce3ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #475569;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dap-back-btn:hover {
+  background: #f8fafc;
+}
+
+.dap-header-title {
+  min-width: 0;
+}
+
+.dap-header-title span {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 14px;
+
+  letter-spacing: 1px;
+}
+
+.dap-header-title h1 {
+  margin: 4px 0 0;
+
+  color: #172033;
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.dap-dashboard-btn {
+  flex: 0 0 auto;
+
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #2563eb;
+
+  padding: 10px 16px;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 14px;
+
+  cursor: pointer;
+}
+
+.dap-dashboard-btn:hover {
+  background: #eff6ff;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.dap-main {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 35px 25px 55px;
+}
+
+.dap-intro {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.dap-intro > span {
+  display: block;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 14px;
+
+  letter-spacing: 1px;
+}
+
+.dap-intro h2 {
+  margin: 6px 0 7px;
+
+  color: #172033;
+
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.dap-intro p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+
+/* =====================================================
+   ALERTS
+===================================================== */
+
+.dap-alert {
+  width: 100%;
+  min-height: 42px;
+
+  margin-bottom: 17px;
+  padding: 10px 14px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.dap-success {
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.dap-error {
+  background: #fff1f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.dap-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* =====================================================
+   LEFT SIDEBAR
+===================================================== */
+
+.dap-sidebar {
+  width: 100%;
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 13px;
+
+  padding: 25px 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+.dap-photo-wrapper {
+  width: 105px;
+  height: 105px;
+
+  margin: 0 auto 15px;
+
+  position: relative;
+}
+
+.dap-photo,
+.dap-photo-placeholder {
+  width: 105px;
+  height: 105px;
+
+  border-radius: 50%;
+}
+
+.dap-photo {
+  display: block;
+
+  object-fit: cover;
+
+  border: 4px solid #eef3ff;
+}
+
+.dap-photo-placeholder {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  color: #ffffff;
+
+  border: 4px solid #eef3ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.dap-photo-edit {
+  position: absolute;
+
+  right: 0;
+  bottom: 1px;
+
+  width: 31px;
+  height: 31px;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   SIDEBAR NAME
+===================================================== */
+
+.dap-sidebar-name {
+  width: 100%;
+
+  margin: 0;
+  padding: 0 5px;
+
+  color: #172033;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+.dap-sidebar-role {
+  width: 100%;
+
+  margin: 4px 0 0;
+  padding: 0 5px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 17px;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   SIDEBAR DIVIDER
+===================================================== */
+
+.dap-sidebar-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 20px 0 0;
+
+  background: #edf1f5;
+}
+
+
+/* =====================================================
+   SIDEBAR INFORMATION
+   IMPORTANT: COLUMN LAYOUT
+===================================================== */
+
+.dap-info-list {
+  width: 100%;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+}
+
+.dap-info-row {
+  width: 100%;
+  min-height: 62px;
+
+  margin: 0;
+  padding: 11px 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-bottom: 1px solid #f0f3f7;
+}
+
+.dap-info-label {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  text-align: left;
+
+  white-space: normal;
+}
+
+.dap-info-value {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 17px;
+
+  text-align: left;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.dap-logout-btn {
+  width: 100%;
+  min-height: 43px;
+
+  margin-top: 18px;
+  padding: 10px 12px;
+
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+
+  background: #fff7f7;
+  color: #b91c1c;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dap-logout-btn:hover {
+  background: #fee2e2;
+}
+
+
+/* =====================================================
+   RIGHT FORM CARD
+===================================================== */
+
+.dap-form-card {
+  width: 100%;
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 13px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.dap-section-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.dap-section-header > div {
+  min-width: 0;
+}
+
+.dap-section-header span:first-child {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 14px;
+
+  letter-spacing: 1px;
+}
+
+.dap-section-header h3 {
+  margin: 5px 0 0;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.dap-editable-badge,
+.dap-readonly-badge {
+  flex: 0 0 auto;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 12px;
+
+  white-space: nowrap;
+}
+
+.dap-editable-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.dap-readonly-badge {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.dap-form-grid {
+  width: 100%;
+
+  margin-top: 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 18px;
+}
+
+.dap-field {
+  min-width: 0;
+}
+
+.dap-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #475569;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.dap-field input {
+  display: block;
+
+  width: 100%;
+  height: 43px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d8e0ea;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.dap-field input::placeholder {
+  color: #a0aec0;
+}
+
+.dap-field input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.08);
+}
+
+.dap-field small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+
+/* =====================================================
+   SECTION DIVIDER
+===================================================== */
+
+.dap-section-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 28px 0;
+
+  background: #edf1f5;
+}
+
+.dap-official-header {
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   READ ONLY GRID
+===================================================== */
+
+.dap-readonly-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 11px;
+}
+
+.dap-readonly-card {
+  min-width: 0;
+
+  min-height: 74px;
+
+  padding: 13px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 6px;
+}
+
+.dap-readonly-card label {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.dap-readonly-card > div {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 17px;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.dap-active-status {
+  color: #15803d !important;
+}
+
+
+/* =====================================================
+   FORM FOOTER
+===================================================== */
+
+.dap-form-footer {
+  width: 100%;
+
+  margin-top: 28px;
+  padding-top: 19px;
+
+  border-top: 1px solid #edf1f5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.dap-photo-help {
+  min-width: 0;
+}
+
+.dap-photo-help strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.dap-photo-help span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.dap-form-actions {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  gap: 8px;
+}
+
+.dap-cancel-btn,
+.dap-save-btn {
+  min-width: 105px;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+
+  cursor: pointer;
+}
+
+.dap-cancel-btn {
+  border: 1px solid #d8e0ea;
+
+  background: #ffffff;
+  color: #475569;
+}
+
+.dap-cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.dap-save-btn {
+  border: 0;
+
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.dap-save-btn:hover {
+  background: #1d4ed8;
+}
+
+.dap-save-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.dap-loading-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f4f7fb;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.dap-loading-page h3 {
+  margin: 16px 0 5px;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.dap-loading-page p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.dap-spinner {
+  width: 38px;
+  height: 38px;
+
+  border: 3px solid #dbeafe;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: dap-spin 0.8s linear infinite;
+}
+
+@keyframes dap-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .dap-main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .dap-layout {
+    grid-template-columns:
+      260px
+      minmax(0, 1fr);
+
+    gap: 15px;
+  }
+
+  .dap-form-card {
+    padding: 20px;
+  }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .dap-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dap-sidebar {
+    max-width: 520px;
+
+    margin: 0 auto;
+  }
+
+  .dap-form-card {
+    max-width: 100%;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .dap-header {
+    min-height: 74px;
+
+    padding: 12px 15px;
+
+    gap: 10px;
+  }
+
+  .dap-header-left {
+    gap: 9px;
+  }
+
+  .dap-header-title span {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .dap-header-title h1 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .dap-back-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dap-dashboard-btn {
+    padding: 9px 11px;
+
+    font-size: 10px;
+  }
+
+  .dap-main {
+    padding: 25px 13px 40px;
+  }
+
+  .dap-intro h2 {
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  .dap-intro p {
+    font-size: 11px;
+    line-height: 17px;
+  }
+
+  .dap-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dap-readonly-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dap-form-footer {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .dap-form-actions {
+    width: 100%;
+  }
+
+  .dap-form-actions button {
+    flex: 1;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .dap-header {
+    align-items: flex-start;
+  }
+
+  .dap-dashboard-btn {
+    display: none;
+  }
+
+  .dap-form-card {
+    padding: 18px;
+  }
+
+  .dap-sidebar {
+    padding: 22px 17px;
+  }
+
+  .dap-section-header {
+    flex-direction: column;
+  }
+
+  .dap-editable-badge,
+  .dap-readonly-badge {
+    align-self: flex-start;
+  }
+
+  .dap-form-actions {
+    flex-direction: column;
+  }
+
+  .dap-cancel-btn,
+  .dap-save-btn {
+    width: 100%;
+  }
+}
